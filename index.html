@@ -19,16 +19,11 @@
   --accent: #e24b4a;
   --accent2: #ff6b6a;
   --mono: 'IBM Plex Mono', monospace;
-  --sans: 'IBM Plex Sans', sans-serif;
   --radius: 6px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:100vh}
-
-/* layout */
 .shell{max-width:1100px;margin:0 auto;padding:1.5rem 1.25rem}
-
-/* topbar */
 .topbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:2rem;padding-bottom:1rem;border-bottom:1px solid var(--border)}
 .logo{display:flex;align-items:center;gap:10px}
 .logo-icon{width:32px;height:32px;background:var(--accent);border-radius:4px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px;flex-shrink:0}
@@ -36,8 +31,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:1
 .logo-sub{font-size:10px;color:var(--text2);letter-spacing:.06em;text-transform:uppercase}
 .user-pill{display:flex;align-items:center;gap:7px;background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:5px 12px;font-size:11px;color:var(--text2)}
 .user-dot{width:7px;height:7px;border-radius:50%;background:#4ade80;flex-shrink:0}
-
-/* stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:1.5rem}
 .stat{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:1rem 1.1rem}
 .stat-label{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.4rem}
@@ -45,8 +38,6 @@ body{background:var(--bg);color:var(--text);font-family:var(--mono);min-height:1
 .stat-val.red{color:#ef4444}
 .stat-val.amber{color:#f59e0b}
 .stat-val.green{color:#4ade80}
-
-/* toolbar */
 .toolbar{display:flex;gap:8px;margin-bottom:1rem;align-items:center}
 .search-wrap{position:relative;flex:1}
 .search-wrap i{position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:15px}
@@ -56,8 +47,6 @@ select{background:var(--bg2);border:1px solid var(--border);color:var(--text2);b
 select:focus{border-color:var(--accent)}
 .btn-new{height:34px;padding:0 16px;font-size:11px;font-family:var(--mono);font-weight:600;letter-spacing:.06em;text-transform:uppercase;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer;display:flex;align-items:center;gap:6px;white-space:nowrap;transition:background .15s}
 .btn-new:hover{background:var(--accent2)}
-
-/* table */
 .table-wrap{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
 table{width:100%;border-collapse:collapse;font-size:12px}
 th{background:var(--bg3);color:var(--text2);font-weight:500;text-align:left;padding:9px 14px;border-bottom:1px solid var(--border);font-size:10px;text-transform:uppercase;letter-spacing:.08em}
@@ -69,16 +58,12 @@ tr.clickable:hover td{background:var(--bg3);cursor:pointer}
 .ts-cell{color:var(--text2);font-size:11px}
 .author-cell{color:var(--text2);font-size:11px}
 .empty-row td{text-align:center;padding:3rem;color:var(--text3);font-size:12px}
-
-/* badges */
 .badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:3px;font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
 .p1{background:#3f1010;color:#f87171;border:1px solid #7f1d1d}
 .p2{background:#3d2000;color:#fbbf24;border:1px solid #78350f}
 .p3{background:#0f2d1a;color:#4ade80;border:1px solid #14532d}
 .p4{background:#0d1f3a;color:#60a5fa;border:1px solid #1e3a5f}
 .type-badge{display:inline-flex;align-items:center;background:var(--bg3);color:var(--text2);border:1px solid var(--border);padding:2px 8px;border-radius:3px;font-size:10px;letter-spacing:.04em}
-
-/* modal */
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);align-items:center;justify-content:center;z-index:100;padding:1rem}
 .overlay.open{display:flex}
 .modal{background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:1.75rem;width:100%;max-width:520px;animation:modal-in .18s ease}
@@ -98,81 +83,30 @@ tr.clickable:hover td{background:var(--bg3);cursor:pointer}
 .btn-submit:hover{background:var(--accent2)}
 .btn-del{padding:7px 16px;font-size:11px;font-family:var(--mono);background:transparent;border:1px solid #7f1d1d;color:#f87171;border-radius:var(--radius);cursor:pointer;margin-right:auto}
 .btn-del:hover{background:#3f1010}
-
-/* detail */
 .detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:1rem}
 .detail-field .dl{font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;margin-bottom:4px}
 .detail-field .dv{font-size:12px;color:var(--text);line-height:1.6}
 .detail-text{font-size:12px;color:var(--text);line-height:1.7;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem;white-space:pre-wrap;max-height:200px;overflow-y:auto}
-
-/* toast */
 .toast{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1rem;font-size:12px;color:var(--text);display:flex;align-items:center;gap:8px;z-index:200;opacity:0;transform:translateY(8px);transition:all .2s;pointer-events:none}
 .toast.show{opacity:1;transform:none}
 .toast.error{border-color:#7f1d1d;color:#f87171}
 .toast i{color:#4ade80}
 .toast.error i{color:#f87171}
-
-/* spinner */
 .spinner{display:inline-block;width:14px;height:14px;border:2px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .6s linear infinite}
 @keyframes spin{to{transform:rotate(360deg)}}
-
-/* setup screen */
-.setup{max-width:480px;margin:4rem auto;background:var(--bg2);border:1px solid var(--border);border-radius:8px;padding:2rem}
-.setup h1{font-size:14px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin-bottom:.5rem;color:var(--text)}
-.setup p{font-size:12px;color:var(--text2);line-height:1.7;margin-bottom:1.25rem}
-.setup ol{font-size:12px;color:var(--text2);line-height:2;padding-left:1.25rem;margin-bottom:1.25rem}
-.setup ol li a{color:var(--accent);text-decoration:none}
-.setup ol li a:hover{text-decoration:underline}
-.setup input{width:100%;background:var(--bg3);border:1px solid var(--border);color:var(--text);border-radius:var(--radius);padding:9px 12px;font-size:12px;font-family:var(--mono);outline:none;margin-bottom:10px}
-.setup input:focus{border-color:var(--accent)}
-.setup .btn-go{width:100%;padding:9px;font-size:12px;font-family:var(--mono);font-weight:600;text-transform:uppercase;letter-spacing:.06em;background:var(--accent);color:#fff;border:none;border-radius:var(--radius);cursor:pointer}
-.setup .btn-go:hover{background:var(--accent2)}
-.setup .err{font-size:11px;color:#f87171;margin-top:.5rem;display:none}
-.divider{height:1px;background:var(--border);margin:1.25rem 0}
-.warning-box{background:#2d1a00;border:1px solid #78350f;border-radius:var(--radius);padding:.75rem 1rem;font-size:11px;color:#fbbf24;line-height:1.6;margin-bottom:1.25rem;display:flex;gap:8px;align-items:flex-start}
-.warning-box i{flex-shrink:0;margin-top:1px}
 </style>
 </head>
 <body>
-
-<!-- SETUP SCREEN (shown if no token/gist configured) -->
-<div id="setup-screen" class="setup" style="display:none">
-  <h1><i class="ti ti-alert-triangle" style="color:var(--accent)"></i> Incident Tracker — Setup</h1>
-  <p>This app uses <strong>GitHub Gist</strong> to store data. You need a GitHub Personal Access Token with the <code>gist</code> scope.</p>
-  <div class="warning-box">
-    <i class="ti ti-lock"></i>
-    <span>The token is stored only locally in your browser (localStorage). It is never shared with anyone. Each user needs their own token.</span>
-  </div>
-  <ol>
-    <li>Go to <a href="https://github.com/settings/tokens" target="_blank">github.com/settings/tokens</a></li>
-    <li>Generate new token (classic)</li>
-    <li>Check the <strong>gist</strong> scope</li>
-    <li>Copy the token and paste it here:</li>
-  </ol>
-  <input type="password" id="setup-token" placeholder="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" />
-  <div>
-    <label style="font-size:10px;color:var(--text2);text-transform:uppercase;letter-spacing:.08em;display:block;margin-bottom:5px">Gist ID (leave empty on first run — will be created automatically)</label>
-    <input type="text" id="setup-gist" placeholder="e.g. a1b2c3d4e5f6... (optional)" style="margin-bottom:10px"/>
-  </div>
-  <button class="btn-go" onclick="doSetup()">Save &amp; Launch</button>
-  <div class="err" id="setup-err"></div>
-</div>
-
-<!-- MAIN APP -->
-<div id="app" style="display:none">
 <div class="shell">
   <div class="topbar">
     <div class="logo">
       <div class="logo-icon"><i class="ti ti-alert-triangle"></i></div>
       <div>
         <div class="logo-text">Incident Tracker</div>
-        <div class="logo-sub" id="gist-link">—</div>
+        <div class="logo-sub">shared · jsonbin</div>
       </div>
     </div>
-    <div style="display:flex;align-items:center;gap:10px">
-      <div class="user-pill"><div class="user-dot"></div><span id="user-badge">—</span></div>
-      <button onclick="showSetup()" title="Settings" style="background:transparent;border:1px solid var(--border);border-radius:var(--radius);width:32px;height:32px;cursor:pointer;color:var(--text2);font-size:15px;display:flex;align-items:center;justify-content:center"><i class="ti ti-settings"></i></button>
-    </div>
+    <div class="user-pill"><div class="user-dot"></div><span id="user-badge">—</span></div>
   </div>
 
   <div class="stats">
@@ -203,7 +137,7 @@ tr.clickable:hover td{background:var(--bg3);cursor:pointer}
       <thead>
         <tr>
           <th style="width:95px">ID</th>
-          <th style="width:55px">Priority</th>
+          <th style="width:65px">Priority</th>
           <th style="width:110px">Type</th>
           <th>Name</th>
           <th style="width:110px">Author</th>
@@ -213,7 +147,6 @@ tr.clickable:hover td{background:var(--bg3);cursor:pointer}
       <tbody id="tbl-body"><tr class="empty-row"><td colspan="6"><div class="spinner"></div></td></tr></tbody>
     </table>
   </div>
-</div>
 </div>
 
 <!-- NEW INCIDENT MODAL -->
@@ -255,32 +188,26 @@ tr.clickable:hover td{background:var(--bg3);cursor:pointer}
   </div>
 </div>
 
-<!-- TOAST -->
 <div class="toast" id="toast"><i class="ti ti-check"></i><span id="toast-msg"></span></div>
 
 <script>
-// ── CONFIG ──────────────────────────────────────────────────────────────────
-const GIST_FILENAME = 'incident-tracker-data.json';
+// ── CONFIG — baked in, no setup needed ──────────────────────────────────────
+const MASTER_KEY = '$2a$10$6sG0q9/gdJSPUgRi4ws7oOq2kbXwJ9TdFkSMITBqlg1VFLI.YpdMe';
+const BIN_NAME   = 'incident-tracker';
+let   BIN_ID     = localStorage.getItem('it_bin_id') || '';
+
 const ADJECTIVES = ['Swift','Silent','Sharp','Steady','Smooth','Clever','Bold','Bright','Dark','Light','Calm','Fierce'];
 const NOUNS      = ['Wolf','Eagle','Deer','Bear','Falcon','Lynx','Beaver','Owl','Maple','Hawk','Bison','Fox'];
 
-// ── STATE ───────────────────────────────────────────────────────────────────
-let token = '';
-let gistId = '';
+let incidents   = [];
 let currentUser = '';
-let incidents = [];
-let saving = false;
+let saving      = false;
 
 // ── INIT ─────────────────────────────────────────────────────────────────────
 window.addEventListener('DOMContentLoaded', async () => {
-  token     = localStorage.getItem('it_token') || '';
-  gistId    = localStorage.getItem('it_gist')  || '';
   currentUser = getUser();
   document.getElementById('user-badge').textContent = currentUser;
-
-  if (!token) { showSetup(); return; }
-  document.getElementById('app').style.display = 'block';
-  await loadData();
+  await initBin();
   setInterval(loadData, 20000);
 });
 
@@ -293,78 +220,68 @@ function getUser() {
   }
   return u;
 }
-function rnd(a){ return a[Math.floor(Math.random()*a.length)]; }
+function rnd(a) { return a[Math.floor(Math.random() * a.length)]; }
 
-// ── SETUP ────────────────────────────────────────────────────────────────────
-function showSetup() {
-  document.getElementById('app').style.display = 'none';
-  document.getElementById('setup-screen').style.display = 'block';
-  if (token) document.getElementById('setup-token').value = token;
-  if (gistId) document.getElementById('setup-gist').value = gistId;
-}
+// ── JSONBIN API ───────────────────────────────────────────────────────────────
+const HEADERS = {
+  'Content-Type': 'application/json',
+  'X-Master-Key': MASTER_KEY,
+  'X-Access-Key': MASTER_KEY,
+  'X-Bin-Versioning': 'false'
+};
 
-async function doSetup() {
-  const t = document.getElementById('setup-token').value.trim();
-  const g = document.getElementById('setup-gist').value.trim();
-  const err = document.getElementById('setup-err');
-  err.style.display = 'none';
-  if (!t) { err.textContent = 'Token is required.'; err.style.display = 'block'; return; }
-
-  // validate token
-  const test = await fetch('https://api.github.com/user', { headers: { Authorization: 'token ' + t } });
-  if (!test.ok) { err.textContent = 'Token is invalid or missing the gist scope.'; err.style.display = 'block'; return; }
-
-  token = t;
-  localStorage.setItem('it_token', token);
-
-  if (g) {
-    gistId = g;
-    localStorage.setItem('it_gist', gistId);
-  } else {
-    // create new gist
-    const r = await fetch('https://api.github.com/gists', {
-      method: 'POST',
-      headers: { Authorization: 'token ' + token, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ description: 'Incident Tracker Data', public: false, files: { [GIST_FILENAME]: { content: '[]' } } })
-    });
-    if (!r.ok) { err.textContent = 'Failed to create Gist. Check the gist scope on your token.'; err.style.display = 'block'; return; }
-    const data = await r.json();
-    gistId = data.id;
-    localStorage.setItem('it_gist', gistId);
-  }
-
-  document.getElementById('setup-screen').style.display = 'none';
-  document.getElementById('app').style.display = 'block';
-  await loadData();
-  setInterval(loadData, 20000);
-}
-
-// ── GIST API ──────────────────────────────────────────────────────────────────
-async function loadData() {
-  if (!gistId) return;
+async function initBin() {
+  if (BIN_ID) { await loadData(); return; }
   try {
-    const r = await fetch('https://api.github.com/gists/' + gistId + '?t=' + Date.now(), {
-      headers: { Authorization: 'token ' + token }
+    const r = await fetch('https://api.jsonbin.io/v3/b', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Master-Key': MASTER_KEY,
+        'X-Bin-Name': BIN_NAME,
+        'X-Bin-Private': 'false',
+        'X-Bin-Versioning': 'false'
+      },
+      body: JSON.stringify({"incidents":[]})
     });
-    if (!r.ok) throw new Error('load fail');
+    if (!r.ok) {
+      const err = await r.json().catch(()=>({}));
+      showToast('Bin error ' + r.status + ': ' + (err.message || 'check API key'), true);
+      return;
+    }
     const data = await r.json();
-    const content = data.files[GIST_FILENAME]?.content || '[]';
-    incidents = JSON.parse(content);
-    // update gist link
-    document.getElementById('gist-link').innerHTML =
-      `<a href="https://gist.github.com/${gistId}" target="_blank" style="color:var(--text3);text-decoration:none;font-size:10px">gist:${gistId.slice(0,8)}…</a>`;
+    BIN_ID = data.metadata.id;
+    localStorage.setItem('it_bin_id', BIN_ID);
+    // Show the bin ID prominently so it can be shared/hardcoded
+    showBinIdBanner(BIN_ID);
+    await loadData();
+  } catch(e) { showToast('Network error: ' + e.message, true); }
+}
+
+function showBinIdBanner(id) {
+  const b = document.createElement('div');
+  b.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#1a3a1a;border-bottom:1px solid #4ade80;padding:10px 16px;font-size:12px;font-family:monospace;color:#4ade80;z-index:999;display:flex;align-items:center;gap:12px';
+  b.innerHTML = '✅ Storage bin created! <strong>Bin ID: ' + id + '</strong> — copy this and send it to whoever manages the app so it can be hardcoded. <button onclick="navigator.clipboard.writeText(\''+id+'\');this.textContent=\'Copied!\'" style="padding:3px 10px;background:#4ade80;color:#000;border:none;border-radius:4px;cursor:pointer;font-size:11px">Copy ID</button> <button onclick="this.parentElement.remove()" style="margin-left:auto;background:transparent;border:none;color:#4ade80;cursor:pointer;font-size:16px">×</button>';
+  document.body.prepend(b);
+}
+
+async function loadData() {
+  try {
+    const r = await fetch('https://api.jsonbin.io/v3/b/' + BIN_ID + '/latest', { headers: HEADERS });
+    const data = await r.json();
+    incidents = Array.isArray(data.record?.incidents) ? data.record.incidents : [];
     render();
   } catch(e) { showToast('Error loading data', true); }
 }
 
 async function saveData() {
-  if (!gistId || saving) return;
+  if (saving) return;
   saving = true;
   try {
-    await fetch('https://api.github.com/gists/' + gistId, {
-      method: 'PATCH',
-      headers: { Authorization: 'token ' + token, 'Content-Type': 'application/json' },
-      body: JSON.stringify({ files: { [GIST_FILENAME]: { content: JSON.stringify(incidents, null, 2) } } })
+    await fetch('https://api.jsonbin.io/v3/b/' + BIN_ID, {
+      method: 'PUT',
+      headers: HEADERS,
+      body: JSON.stringify({"incidents": incidents})
     });
   } catch(e) { showToast('Error saving data', true); }
   saving = false;
@@ -471,12 +388,8 @@ function fmtTs(ts) {
   const d = new Date(ts);
   return d.toLocaleDateString('en-GB') + ' ' + d.toLocaleTimeString('en-GB', {hour:'2-digit', minute:'2-digit'});
 }
-function prioBadge(p) {
-  return `<span class="badge ${p.toLowerCase()}">${p}</span>`;
-}
-function esc(s) {
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
+function prioBadge(p) { return `<span class="badge ${p.toLowerCase()}">${p}</span>`; }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
 let toastTimer;
 function showToast(msg, error=false) {
@@ -488,14 +401,9 @@ function showToast(msg, error=false) {
   toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// close modals on bg click
 document.getElementById('new-modal').addEventListener('click', e => { if(e.target===e.currentTarget) closeNew(); });
 document.getElementById('detail-modal').addEventListener('click', e => { if(e.target===e.currentTarget) closeDetail(); });
-
-// keyboard ESC
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') { closeNew(); closeDetail(); }
-});
+document.addEventListener('keydown', e => { if(e.key==='Escape'){closeNew();closeDetail();} });
 </script>
 </body>
 </html>
